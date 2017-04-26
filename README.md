@@ -1,14 +1,11 @@
+Note: This is a fork from https://github.com/hallard/WeMos-Lora reducing complexity (no display connector, no LEDs, no button) and freeing GPIO16/D0 to allow deep sleep
+
 ESP8266 WeMos Shield for HopeRF RFM95 RFM96 RFM98 Lora Modules
 ==============================================================
 
 This shield is used to hold HopeRF [Lora module][4] Software with WeMos ESP8266 boards it has just few minimal features. 
-- I2C Pullups placement
-- Classic I2C 128x64 OLED connector
 - Placement for RFM95/96/98 Lora module
 - Placement for choosing single Wire, SMA or u-FL Antenna type 
-- 2 x WS2812B Type LED for visual indication
-- Custom switch on GPIO2
-- Added footprint for Microchip 24AA02E64 64 bits serial number (v1.1+) 
 
 
 You can find more information on WeMos on their [site][1], it's really well documented.
@@ -21,7 +18,7 @@ Detailed Description
 
 Look at the schematics for more informations.
 
-SPI connexion is classic (MOSI/MISO/CLK), Chip Select is connected with GPIO16.
+SPI connexion is classic (MOSI/MISO/CLK), Chip Select is connected with GPIO2.
 
 Other pins that may need be adapted into code (for example if you use TTN network gateway code) according to the following pinout
 
@@ -34,41 +31,31 @@ You can see more details ont this dedicated LMIC [Pull Request][6]
   GPIO13 (D7) <----> MOSI
   GPIO14 (D5) <----> CLK
   GPIO15 (D8) <----> DIO0/D2 OR DIO1/D3 OR DIO2/D4
-  GPIO16 (D0) <----> SEL (Chip Select)
-
-   WeMos D1         Shield Feature
-  GPIO5 (D1) <----> I2C SCL
-  GPIO4 (D2) <----> I2C SDA
-  GPIO0 (D3) <----> WS2812 LEDS
-  GPIO2 (D4) <----> Push Button
+  GPIO02 (D4) <----> SEL (Chip Select)
+ <----> Push Button
 ```
 
 ### Schematic  
-![schematic](https://raw.githubusercontent.com/hallard/WeMos-Lora/master/pictures/WeMos-Lora-sch.png)  
-
-### Firmware  
-![firmware](https://raw.githubusercontent.com/hallard/WeMos-Lora/firmware/)  
+![schematic](pictures/WeMos-Lora-sch.png)  
 
 ### Boards  
-<img src="https://raw.githubusercontent.com/hallard/WeMos-Lora/master/pictures/WeMos-Lora-top.png" alt="Top">&nbsp;
-<img src="https://raw.githubusercontent.com/hallard/WeMos-Lora/master/pictures/WeMos-Lora-bot.png" alt="Bottom">
+![top](pictures/design-top.jpg)  
+![bottom](pictures/design-bottom.jpg)  
 
 You can order the PCB of this board at [PCBs.io][3] if you do so, PCBs.io give me little discount that allow me to buy some new created boards.
 
 ### Assembled boards
 
-<img src="https://raw.githubusercontent.com/hallard/WeMos-Lora/master/pictures/WeMos-Lora-top-assembled.jpg" alt="Top">    
-<img src="https://raw.githubusercontent.com/hallard/WeMos-Lora/master/pictures/WeMos-Lora-bot-assembled.jpg" alt="Bottom">    
+![top](pictures/top.jpg)
+![bottom](pictures/bottom.jpg)
+
 ##License
 
-You can do whatever you like with this design.
+http://unlicense.org/
 
-##Misc
-See news and other projects on my [blog][2] 
  
 [1]: http://www.wemos.cc/wiki/doku.php?id=en:d1_mini
-[2]: https://hallard.me
-[3]: https://PCBs.io/share/4Q1Z4 
+[3]: https://pcbs.io/share/4XG02
 [4]: http://www.hoperf.com/rf_transceiver/lora/
 [5]: https://github.com/hallard/ESP-1ch-Gateway/
 [6]: https://github.com/matthijskooijman/arduino-lmic/pull/34
