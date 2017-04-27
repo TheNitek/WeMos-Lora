@@ -32,7 +32,7 @@ You can see more details ont this dedicated LMIC [Pull Request][6]
   GPIO14 (D5) <----> CLK
   GPIO15 (D8) <----> DIO0/D2 OR DIO1/D3 OR DIO2/D4
   GPIO02 (D4) <----> SEL (Chip Select)
- <----> Push Button
+  RST         <----> RST
 ```
 
 ### Schematic  
@@ -49,7 +49,7 @@ You can order the PCB of this board at [PCBs.io][3] if you do so, PCBs.io give m
 ![top](pictures/top.jpg)
 ![bottom](pictures/bottom.jpg)
 
-##License
+### License
 
 http://unlicense.org/
 
